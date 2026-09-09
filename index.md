@@ -120,10 +120,12 @@ technical administrators.
 
 Three routes, no ticket required:
 
-1. **Do it yourself in the bot.** `/iam delete` erases your own record —
+1. **Do it yourself in the bot.** `/unregister` erases your own record —
    character link, registration and membership row — immediately, without any
-   moderator involvement. `/iam unlink` removes a character association on its
-   own.
+   moderator involvement. `/unlink` removes a character association on its own.
+   `/unregister` requires one of the datacenter roles, which registration grants
+   automatically; if the bot tells you that you lack permission, use route 3
+   below.
 2. **Leave the server.** Your registry data is deleted automatically, with no
    action needed from you.
 3. **Ask a human.** Any server moderator can run the removal on your behalf.
