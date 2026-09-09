@@ -93,9 +93,11 @@ is retained beyond a member's departure.
 - **Discord** — the platform itself, under its own privacy policy.
 - **A hosted AI classification provider** — receives the text or image of
   messages flagged by the local check, for classification only. Requests are
-  sent with a data policy that **excludes providers which retain or train on
-  request data**. This content is not used to train, fine-tune or evaluate any
-  model, ours or theirs.
+  sent with a data policy that **excludes providers which train on request
+  data**, publish prompts, or use them to improve a product. This content is not
+  used to train, fine-tune or evaluate any model, ours or theirs. Whether the
+  provider keeps a short-lived operational copy is governed by its own policy;
+  we send nothing that identifies you alongside the message text.
 - **Square Enix Lodestone and FFLogs** — public game services the bot reads
   character and raid-progression data from. We send them your declared character
   name and world; we send them nothing about your Discord account.
