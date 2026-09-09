@@ -4,7 +4,7 @@ title: Privacy Policy — Alpha
 
 # Privacy Policy — Alpha
 
-**Last updated:** 2026-09-05
+**Last updated:** 2026-09-09
 
 Alpha is a recruitment-management bot operated for a single Final Fantasy XIV
 community Discord server. It is not a public, listed bot and is not offered to
