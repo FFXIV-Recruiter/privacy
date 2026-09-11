@@ -77,12 +77,10 @@ the privacy policy, or a request concerning your own data, use the contact
 above or the routes set out in section 7 of the [Privacy Policy](./).
 
 <!--
-Follow-ups once this page goes live:
+Follow-up once this page goes live:
 
-  1. Link it from index.md (footer, or section 1 next to "Who operates the
-     bot"). Not done here — a link to a 404 is worse than no link.
-  2. Point the bot's /legal-notice at this URL instead of carrying its own
-     copy. The in-bot text lives in cmds/appcmds/legal_content.py in the alpha
-     repo and still reads "[TBD — pending confirmation]"; two copies of the
-     same promises have already drifted apart once.
+  Point the bot's /legal-notice at this URL instead of carrying its own
+  copy. The in-bot text lives in cmds/appcmds/legal_content.py in the alpha
+  repo and still reads "[TBD — pending confirmation]"; two copies of the
+  same promises have already drifted apart once.
 -->
