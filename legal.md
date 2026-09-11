@@ -28,13 +28,12 @@ Alpha is a recruitment-management bot operated for a single Final Fantasy XIV
 community Discord server. It is not a public, listed bot, it carries no
 advertising, and it is not operated for profit.
 
-**Publisher:** <<PUBLISHER — see PR description; identity, and whether it is
-published here at all, is Xiantai's call>>
+**Publisher:** Xiantai, owner of the Discord server Alpha operates on.
 
-**Publication director:** <<PUBLICATION DIRECTOR — normally the same person>>
+**Publication director:** Alink Tothepast, the bot's developer.
 
-**Contact:** <<CONTACT ADDRESS — a dedicated address on a domain the team
-controls, not a personal mailbox>>
+**Contact:** <<CONTACT ADDRESS — invite link to a #support channel, plus an
+email address, pending>>
 
 Members of the Discord server can also reach the moderation team through the
 server's modmail.
