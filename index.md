@@ -4,7 +4,7 @@ title: Privacy Policy — Alpha
 
 # Privacy Policy — Alpha
 
-**Last updated:** 2026-09-09
+**Last updated:** 2026-09-30
 
 Alpha is a recruitment-management bot operated for a single Final Fantasy XIV
 community Discord server. It is not a public, listed bot and is not offered to
@@ -54,9 +54,9 @@ screens messages to detect them.
 
 **Not every message is examined.** A local check runs first, inside the bot, and
 a message goes no further unless it shows a fraud signal: a phone-number
-pattern, an external link, or an author who is new to the server or has no
+pattern, an external link, or a message of several words from an author with no
 assigned roles. Staff, moderation and bot channels are excluded from screening
-entirely. Messages that do not match are discarded immediately and are never
+entirely, and direct messages to the bot are never screened. Messages that do not match are discarded immediately and are never
 stored, transmitted or logged.
 
 A message that does match is sent to a hosted classification model, which
