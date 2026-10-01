@@ -52,22 +52,32 @@ The server is a recurring target for fraudulent recruitment offers that push
 members toward off-platform contact, phone numbers and malicious links. The bot
 screens messages to detect them.
 
-**Not every message is examined.** A local check runs first, inside the bot, and
-a message goes no further unless it shows a fraud signal: a phone-number
-pattern, an external link, or a message of several words from an author with no
-assigned roles. Staff, moderation and bot channels are excluded from screening
-entirely, and direct messages to the bot are never screened. Messages that do not match are discarded immediately and are never
-stored, transmitted or logged.
+**Not every message is examined.** A local check runs first, inside the bot,
+and a message goes no further unless it shows a fraud signal: a phone-number
+pattern, an external link to a site outside a short list of common gaming and
+media sites, words associated with money or off-platform contact, or a message
+of several words from a member who joined the server less than seven days ago.
+Staff, moderation and bot channels are excluded from screening entirely, and
+direct messages to the bot are never screened. Messages that do not match are
+discarded immediately and are never stored, transmitted or logged.
 
-A message that does match is sent to a hosted classification model, which
-returns only a verdict and a confidence level. **Message content is never
-written to our database.** It exists briefly in an internal processing queue —
-seconds, until consumed — and in the request to the classifier.
+A message that does match is analysed in three ways: links are compared with
+public lists of malicious domains that we download and keep locally (your
+links are never sent to a third party and are never opened); simple patterns
+such as phone numbers are matched; and the text is sent to a hosted
+classification model, which returns the fraud signals it found, each with a
+short quote from the message as evidence. **The full message is never written
+to our database.** Only those short quotes are stored, for 30 days, so
+moderators can review the decision; after 30 days only the type of signal is
+kept.
 
-If a message is classified as fraudulent, the bot applies a graduated response
-(deletion, then a temporary timeout, then a ban for repeat offences) and records
-the decision in a private, staff-only channel inside the Discord server, where a
-short excerpt of the offending message may appear so moderators can review it.
+If a message is classified as fraudulent, the bot applies a graduated response.
+For images, that is deletion, then a temporary timeout, then a ban for repeat
+offences. For text, the bot may delete a message that shows clear evidence of
+fraud and notify you, but text alone never leads to a timeout or a ban. Each
+decision is recorded in a private, staff-only channel inside the Discord
+server, where a short excerpt of the offending message may appear so
+moderators can review it; those copies remain in that channel.
 
 **Why:** protecting members from fraud is a legitimate interest of the server.
 There is no opt-out, because a fraud filter that scammers could opt out of would
@@ -81,8 +91,10 @@ The bot also stores:
 - **server configuration**: the Discord IDs of the server and its owner, and the
   server's bot settings;
 - **a moderation ledger of scam offences**: the Discord IDs of the user, server,
-  channel and message involved, an offence weight, the detection stage and a
-  timestamp. **No message content is stored here.**
+  channel and message involved, an offence weight, the detection stage, the
+  moderator review and a timestamp. **No full message is stored here.** For
+  text detections, the short evidence quotes described in section 3 are kept
+  alongside for 30 days, then erased; only the type of signal remains.
 
 The moderation ledger is kept for the security of the server. Deleting it when a
 member leaves would make it trivially defeated by leaving and rejoining, so it
@@ -110,7 +122,8 @@ with anyone else.
 | Data | Retention |
 |---|---|
 | Recruitment registry (character link, registration) | Until you delete it, or until you leave the server — whichever comes first |
-| Message content | Not stored; transient only (seconds in a processing queue) |
+| Message content | Not stored; transient only (seconds in a processing queue and the classifier request) |
+| Anti-scam evidence quotes | 30 days in the database, then only the signal type is kept; copies shown to moderators stay in staff-only Discord channels |
 | Moderation ledger of scam offences | Retained for server security |
 | Server configuration | While the bot is on the server |
 
