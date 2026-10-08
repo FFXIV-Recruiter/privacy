@@ -4,7 +4,7 @@ title: Privacy Policy — Alpha
 
 # Privacy Policy — Alpha
 
-**Last updated:** 2026-09-30
+**Last updated:** 2026-10-08
 
 Alpha is a recruitment-management bot operated for a single Final Fantasy XIV
 community Discord server. It is not a public, listed bot and is not offered to
@@ -126,6 +126,7 @@ with anyone else.
 | Anti-scam evidence quotes | 30 days in the database, then only the signal type is kept; copies shown to moderators stay in staff-only Discord channels |
 | Moderation ledger of scam offences | Retained for server security |
 | Server configuration | While the bot is on the server |
+| Technical traces (command run, server, step timings, errors) — no message content, no user identifier | 7 days |
 
 Data is held in a self-hosted PostgreSQL database on hardware we control. The
 database is **encrypted at rest**. Access is restricted to the server's
