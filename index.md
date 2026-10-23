@@ -4,7 +4,7 @@ title: Privacy Policy — Alpha
 
 # Privacy Policy — Alpha
 
-**Last updated:** 2026-10-08
+**Last updated:** 2026-10-24
 
 Alpha is a recruitment-management bot operated for a single Final Fantasy XIV
 community Discord server. It is not a public, listed bot and is not offered to
@@ -29,18 +29,27 @@ instead.
 
 When you link your in-game character to your Discord account, the bot stores:
 
-- **a SHA-512 digest of your Discord user ID** — not the ID itself;
-- **a randomly generated identifier (UUID)** associated with that digest, which
+- **a keyed hash of your Discord user ID** (HMAC-SHA-256, computed with a
+  secret key) — not the ID itself;
+- **a randomly generated identifier (UUID)** associated with that hash, which
   is what everything else is attached to;
 - **your declared FFXIV character**: name, home world, data centre and Lodestone
   ID, plus the public character data the bot retrieves from those services
   (job, level, race, free company, portrait URLs, and similar);
 - **your registration record** for the server's recruitment listings.
 
-This is *pseudonymisation*, not anonymisation. The digest is deterministic, so
-the bot recognises you if you return. We do not claim it is irreversible to
-someone who already holds a list of candidate Discord IDs. It does mean the
-registry itself contains no directly readable Discord identifier.
+This is *pseudonymisation*, not anonymisation. The hash is deterministic, so
+the bot recognises you if you return. The secret key is kept outside the
+database, so someone who obtains the registry alone cannot test a list of
+candidate Discord IDs against it. The server's technical administrators, who
+hold the key, could still recompute it, so we do not claim it is irreversible
+to them. The registry itself contains no directly readable Discord identifier.
+
+Until October 2026 this was an unkeyed SHA-512 digest, which anyone holding the
+registry could test against candidate Discord IDs. Registry rows now use the
+keyed hash only. Database backups taken before the change still contain the
+older digests until they expire: daily backups after 30 days, monthly backups
+after 12 months.
 
 **Why:** this is the service you asked for — it is what makes character
 verification and recruitment listings work. You provide it voluntarily and can
