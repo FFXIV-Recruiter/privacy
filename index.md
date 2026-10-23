@@ -19,7 +19,8 @@ filter described in section 3.
 
 Alpha is operated by the staff team of the community server it runs on. There is
 no company behind it, no advertising, and no sale or sharing of data with third
-parties beyond the technical providers listed in section 5.
+parties beyond the technical providers listed in section 5. Publisher identity
+and hosting details are in the [Legal Notice](/legal/).
 
 **Contact:** reach the server's moderation team through the server's modmail.
 If you no longer have access to the server, write to `<CONTACT ADDRESS>`
